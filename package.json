@@ -13,9 +13,11 @@
   "dependencies": {
     "-": "^0.0.1",
     "D": "^1.0.0",
+    "bcrypt": "^6.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "express": "^5.1.0",
+    "multer": "^2.0.2",
     "pg": "^8.16.3",
     "pg-hstore": "^2.3.4",
     "prettier": "^3.6.2",

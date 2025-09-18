@@ -1,4 +1,4 @@
-/*import Sequelize, { Model } from 'sequelize';
+import Sequelize, { Model } from 'sequelize';
 
 class Product extends Model {
     static init(sequelize) {
@@ -8,6 +8,12 @@ class Product extends Model {
                 price: Sequelize.INTEGER,
                 category: Sequelize.STRING,
                 path: Sequelize.STRING,
+                url: {
+                    type: Sequelize.VIRTUAL, //não é guardado no banco
+                    get() {
+                        return `http://localhost:3001/product-file/${this.path}`;
+                    },
+                },
             },
             {
                 sequelize,
@@ -17,5 +23,3 @@ class Product extends Model {
 }
 
 export default Product;
-
-*/

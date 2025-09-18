@@ -1,6 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
 import bcrypt from 'bcrypt';
-import { password } from '../../config/database';
 class User extends Model {
   static init(sequelize) {
     super.init(

@@ -6,11 +6,16 @@ import './database';
 
 const app = express();
 
-// Middlewares
+//=====MIDDLEWARES==========//
+
 app.use(express.json());
+
 app.use('/product-file', express.static(resolve(__dirname, '..', 'uploads')));
 
-// Rotas
+app.use('/category-file', express.static(resolve(__dirname, '..', 'uploads')));
+
+//=====ROUTES==========//
+
 app.use(routes);
 
 export default app;

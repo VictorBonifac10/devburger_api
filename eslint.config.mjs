@@ -15,6 +15,7 @@ export default defineConfig([
     rules: {
       ...js.configs.recommended.rules, // inclui as regras recomendadas do JS
       'prettier/prettier': 'off', // mostra erro se o código não seguir o Prettier
+      'no-unused-vars': 'off',
     },
   },
 ]);

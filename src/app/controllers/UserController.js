@@ -2,6 +2,9 @@ import { v4 } from 'uuid';
 import User from '../models/User';
 import * as Yup from 'yup';
 class UserController {
+
+  //=====STORE==========//
+
   async store(request, response) {
     const schema = Yup.object({
       name: Yup.string()

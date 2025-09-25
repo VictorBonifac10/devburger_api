@@ -4,6 +4,9 @@ import jwt from 'jsonwebtoken';
 import authConfig from '../../config/auth.js'
 
 class SessionController {
+
+    //=====STORE==========//
+
     async store(request, response) {
         const schema = Yup.object({
             email: Yup.string().email().required(),
@@ -45,7 +48,7 @@ class SessionController {
             name: user.name,
             email,
             admin: user.admin,
-            token: jwt.sign({ id: user.id }, authConfig.secret, {
+            token: jwt.sign({ id: user.id, name: user.name }, authConfig.secret, {
                 expiresIn: authConfig.expiresIn,
             }),
         });

@@ -1,3 +1,5 @@
+//DATABASE POSTGRES
+
 module.exports = {
   dialect: 'postgres',
   host: 'localhost',

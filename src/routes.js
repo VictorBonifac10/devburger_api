@@ -11,6 +11,8 @@ import authMiddleware from './app/middlewares/auth';
 import OrderController from './app/controllers/OrderController';
 //import { request } from './app';
 
+import CreatePaymentIntentController from './app/controllers/stripe/CreatePaymentIntentController';
+
 const routes = new Router();
 
 const upload = multer(multerConfig);
@@ -39,5 +41,9 @@ routes.put('/categories/:id', upload.single('file'), CategoryController.update);
 routes.post('/orders', OrderController.store);
 routes.get('/orders', OrderController.index);
 routes.put('/orders/:id', OrderController.update);
+
+//=====STRIPE==========//
+
+routes.post('/create-payment-intent', CreatePaymentIntentController.store);
 
 export default routes;

@@ -1,10 +1,12 @@
-import Stripe from "stripe";
 import * as Yup from 'yup';
 import 'dotenv/config';
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import Stripe from 'stripe';
 
-//const stripe = require("stripe")('sk_test_51SITqXFWPFDLw7gHx8dAJG10DS90kohRhgB0H9BGyZ3HOjofmMrFuswPfr2Ls00NpTec9ovE7UZD25H0WLLKnIXg00IM2fKFfY');
+console.log("🔑 Stripe Key:", process.env.STRIPE_SECRET_KEY); // <--- TESTE AQUI
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
 
 const calculateOrderAmount = (items) => {
     const total = items.reduce((acc, current) => {
